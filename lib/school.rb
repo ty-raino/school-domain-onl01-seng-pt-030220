@@ -1,9 +1,31 @@
 class School
-  def school.roster
-  end
+
   def initialize(name)
     @name = name
+    @roster = {}
+  end
+
+  def roster
+    @roster
+  end
+
+def add_student(name, grade)
+  @name = name
+  @grade = grade
+  if @roster.include?(grade) == false
+    @roster[grade] = []
+  end
+  @roster[grade] << name
+end
+
+def grade(number)
+  @roster[number]
+end
+
+def sort
+  @roster.each do |grade, name|
+    @roster[grade] = name.sort
   end
 end
 
-school = School.new("Bayside High School")
+end
